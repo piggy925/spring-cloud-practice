@@ -1,5 +1,5 @@
 server:
-  port: 8010
+  port: 8020
 
 spring:
   application:
@@ -15,3 +15,6 @@ spring:
         password: nacos
         # 命名空间：用于隔离不同的服务实例（如开发环境、生产环境），默认为 public
         namespace: public
+        # 是否为临时实例。
+        # 设为 false 表示为永久实例：即使宕机，也不会删除该实例
+        ephemeral: true
