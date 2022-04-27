@@ -8,8 +8,8 @@
 
 #### 内容
 
-- [ ] Nacos Discovery 服务发现
-- [ ] Ribbon 负载均衡
+- [x] Nacos Discovery 服务发现
+- [x] Ribbon 负载均衡
 - [ ] OpenFeign 客户端
 - [ ] Nacos Config 配置管理中心
 - [ ] Sentinel 流量控制
@@ -17,7 +17,7 @@
 - [ ] Gateway 网关
 - [ ] Skywalking 链路追踪
 
-
 #### 学习笔记：
 
 1. [微服务组件 - 注册中心 Nacos](./doc/1.注册中心Nacos.md)
+2. [微服务组件 - 负载均衡 Ribbon](./doc/2.负载均衡Ribbon.md)

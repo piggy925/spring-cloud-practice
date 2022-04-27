@@ -7,7 +7,7 @@ spring:
     name: order-service
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8010 # Nacos Server 地址
+      server-addr: 127.0.0.1:8850 # Nacos Server 地址
       discovery:
         username: nacos # Nacos Server 用户名密码
         password: nacos
@@ -16,3 +16,15 @@ spring:
         ephemeral: true # 是否为临时实例, 默认为true。设为 false 表示为永久实例：即使宕机，也不会删除该实例
         # service: 服务名，默认取${spring.application.name}
         # weight: 权重，通常结合负载均衡策略使用。权重越大，分配到的流量越大。
+
+ribbon:
+  eager-load:
+    # 开启饥饿加载
+    enabled: true
+    # 指定需要饥饿加载的服务名（要调用的服务名），多个服务使用逗号分隔
+    clients: stock-service
+
+stock-service: # 被调用的微服务名
+  ribbon:
+    # 指定负载均衡策略
+    NFLoadBalancerRuleClassName: com.mumu.ribbon.rule.CustomRule

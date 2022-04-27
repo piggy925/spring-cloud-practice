@@ -11,6 +11,9 @@ import org.springframework.web.client.RestTemplate;
  * @author mumu
  * @date 2022/4/21
  */
+//@RibbonClients(value = {
+//        @RibbonClient(name = "stock-service", configuration = RibbonRandomRuleConfig.class)
+//})
 @SpringBootApplication
 public class OrderApplication {
     public static void main(String[] args) {
