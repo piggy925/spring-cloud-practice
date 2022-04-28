@@ -1,6 +1,12 @@
 server:
   port: 8020
 
+logging:
+  # 将 level 设为 debug 会对全局生效
+  level:
+    # 仅将指定包设为 debug
+    com.mumu.order.feign: debug
+
 spring:
   application:
     # 服务名
@@ -28,3 +34,16 @@ stock-service: # 被调用的微服务名
   ribbon:
     # 指定负载均衡策略
     NFLoadBalancerRuleClassName: com.mumu.ribbon.rule.CustomRule
+
+feign:
+  client:
+    config:
+      stock-service:
+        loggerLevel: BASIC
+        contract: feign.Contract.Default
+        # 连接超时时间
+        connectTimeout: 3000
+        # 请求处理超时时间
+        readTimeout: 10000
+        requestInterceptors[0]:
+          com.mumu.order.interceptor.feign.CustomFeignInterceptor

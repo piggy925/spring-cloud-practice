@@ -5,6 +5,7 @@
     <modules>
         <module>order</module>
         <module>stock</module>
+        <module>product</module>
     </modules>
 
     <groupId>com.mumu</groupId>

@@ -1,4 +1,4 @@
-package com.mumu.stock.controller;
+package com.mumu.product.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,8 @@ public class StockController {
     String port;
 
     @GetMapping("/reduct")
-    public String reduct() {
+    public String reduct() throws InterruptedException {
+        //Thread.sleep(5000);
         System.out.println(port + " 扣减库存");
         return port + " 扣减库存";
     }
