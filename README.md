@@ -10,7 +10,7 @@
 
 - [x] Nacos Discovery 服务发现
 - [x] Ribbon 负载均衡
-- [ ] OpenFeign 客户端
+- [x] OpenFeign 服务调用
 - [ ] Nacos Config 配置管理中心
 - [ ] Sentinel 流量控制
 - [ ] Seata 分布式事务
@@ -21,3 +21,4 @@
 
 1. [微服务组件 - 注册中心 Nacos](./doc/1.注册中心Nacos.md)
 2. [微服务组件 - 负载均衡 Ribbon](./doc/2.负载均衡Ribbon.md)
+2. [微服务组件 - 服务调用 OpenFeign](./doc/3.服务调用OpenFeign.md)
