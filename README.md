@@ -6,12 +6,12 @@
 
 仅包含 Spring Cloud Alibaba 组件的功能说明、配置以及使用方式，非业务相关。
 
-#### 内容
+#### 内容：
 
 - [x] Nacos Discovery 服务发现
 - [x] Ribbon 负载均衡
 - [x] OpenFeign 服务调用
-- [ ] Nacos Config 配置管理中心
+- [x] Nacos Config 配置管理中心
 - [ ] Sentinel 流量控制
 - [ ] Seata 分布式事务
 - [ ] Gateway 网关
@@ -21,4 +21,5 @@
 
 1. [微服务组件 - 注册中心 Nacos](./doc/1.注册中心Nacos.md)
 2. [微服务组件 - 负载均衡 Ribbon](./doc/2.负载均衡Ribbon.md)
-2. [微服务组件 - 服务调用 OpenFeign](./doc/3.服务调用OpenFeign.md)
+3. [微服务组件 - 服务调用 OpenFeign](./doc/3.服务调用OpenFeign.md)
+4. [微服务组件 - 配置中心 Nacos Config](./doc/4.配置中心Nacos-Config.md)
