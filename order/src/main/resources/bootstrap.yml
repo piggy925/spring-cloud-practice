@@ -1,0 +1,25 @@
+spring:
+  application:
+    # 会自动根据服务名拉去对应 Data ID 的配置文件
+    # 名字与服务名相同的配置文件称为默认配置文件
+    name: order-service
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8850
+      config:
+        # 默认配置文件的格式
+        file-extension: yml
+        # 指定配置文件所在的命名空间，默认为 public
+        # namespace: public
+        # 指定配置文件所在的 group，默认为 DEFAULT_GROUP
+        # group: DEFAULT_GROUP
+        shared-configs:
+          # 指定配置文件所在的 Data ID
+          - data-id: com.mumu.common.yaml
+            # 指定配置文件所在的 group，默认为 DEFAULT_GROUP
+            # group: DEFAULT_GROUP
+            # 开启动态感知
+            refresh: true
+        extension-configs[0]:
+          - data-id: com.mumu.service.yaml
+            refresh: true
