@@ -20,6 +20,6 @@ spring:
             # group: DEFAULT_GROUP
             # 开启动态感知
             refresh: true
-        extension-configs[0]:
-          - data-id: com.mumu.service.yaml
-            refresh: true
+#        extension-configs[0]:
+#          - data-id: com.mumu.service.yaml
+#            refresh: true
