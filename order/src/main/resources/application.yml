@@ -6,12 +6,15 @@ logging:
   level:
     # 仅将指定包设为 debug
     com.mumu.order.feign: debug
-
+    
 spring:
   application:
     # 服务名
     name: order-service
   cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8090
     nacos:
       server-addr: 127.0.0.1:8850 # Nacos Server 地址
       discovery:

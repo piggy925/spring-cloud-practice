@@ -1,5 +1,6 @@
 package com.mumu.order.controller;
 
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.mumu.order.feign.ProductFeignService;
 import com.mumu.order.feign.StockFeignService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,10 +22,18 @@ public class OrderController {
     private ProductFeignService productFeignService;
 
     @GetMapping("/add")
+    //@SentinelResource(value = "add", blockHandler = "addBlockHandler")
     public String add() {
         System.out.println("下单成功");
         String s = stockFeignService.reduct();
         String p = productFeignService.get(999);
         return "HELLO FEIGN - " + s + p;
+    }
+
+    /**
+     * 注解指定的流控处理方法
+     */
+    public String addBlockHandler(BlockException e) {
+        return "请求已被流控";
     }
 }
