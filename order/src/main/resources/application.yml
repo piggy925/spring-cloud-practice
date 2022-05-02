@@ -6,7 +6,7 @@ logging:
   level:
     # 仅将指定包设为 debug
     com.mumu.order.feign: debug
-    
+
 spring:
   application:
     # 服务名
@@ -15,6 +15,18 @@ spring:
     sentinel:
       transport:
         dashboard: 127.0.0.1:8090
+      # 防止默认将调用链路收敛
+      web-context-unify: false
+      datasource:
+        flow-rule: # 这个可以名字自定义
+          nacos:
+            server-addr: 127.0.0.1:8850 # Nacos Server 地址
+            username: nacos # Nacos Server 用户名密码
+            password: nacos
+            dataId: order-service-sentinal-config # Nacos 中创建配置文件的 data id
+            dataType: json # 配置文件的类型（默认是 json）
+            rule-type: flow # 指明是那种规则（如流控、降级、热点参数等）的配置信息
+            # 此外还可以设置 namespace、group 等
     nacos:
       server-addr: 127.0.0.1:8850 # Nacos Server 地址
       discovery:
@@ -43,10 +55,13 @@ feign:
     config:
       stock-service:
         loggerLevel: BASIC
-        contract: feign.Contract.Default
+        # 启用 feign 原生注解
+        # contract: feign.Contract.Default
         # 连接超时时间
         connectTimeout: 3000
         # 请求处理超时时间
         readTimeout: 10000
-        requestInterceptors[0]:
-          com.mumu.order.interceptor.feign.CustomFeignInterceptor
+        requestInterceptors[0]: com.mumu.order.interceptor.feign.CustomFeignInterceptor
+  sentinel:
+    # 启用 feign 对 sentinel 的支持
+    enabled: true
