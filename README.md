@@ -11,8 +11,8 @@
 - [x] Nacos Discovery 服务发现
 - [x] Ribbon 负载均衡
 - [x] OpenFeign 服务调用
-- [x] Nacos Config 配置管理中心
-- [ ] Sentinel 流量控制
+- [x] Nacos Config 配置管理
+- [x] Sentinel 流控降级
 - [ ] Seata 分布式事务
 - [ ] Gateway 网关
 - [ ] Skywalking 链路追踪
@@ -23,3 +23,4 @@
 2. [微服务组件 - 负载均衡 Ribbon](./doc/2.负载均衡Ribbon.md)
 3. [微服务组件 - 服务调用 OpenFeign](./doc/3.服务调用OpenFeign.md)
 4. [微服务组件 - 配置中心 Nacos Config](./doc/4.配置中心Nacos-Config.md)
+4. [微服务组件 - 流控降级 Sentinel](./doc/5.流控降级Sentinel.md)
