@@ -6,6 +6,7 @@
         <module>order</module>
         <module>stock</module>
         <module>product</module>
+        <module>seata-demo</module>
     </modules>
 
     <groupId>com.mumu</groupId>

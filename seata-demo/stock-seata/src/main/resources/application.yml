@@ -1,0 +1,47 @@
+# 数据源
+spring:
+  datasource:
+    username: root
+    password: aaaa1234
+    url: jdbc:mysql://localhost:3306/seata_stock?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  application:
+    name: stock-seata
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8850
+        username: nacos
+        password: nacos
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group # 配置事务分组
+
+seata:
+  # 配置 Seata 的注册中心，让 Seata Client 知道如何访问 Seata Server
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8850 # Seata Server 所在 Nacos 的服务地址
+      username: nacos
+      password: nacos
+      application: seata-server # Seata Server 的服务名
+      group: SEATA_GROUP
+  # 配置 Seata 的配置中心，读取 Seata Client 的相关配置
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8850 # Seata Server 所在 Nacos 的服务地址
+      username: nacos
+      password: nacos
+      group: SEATA_GROUP
+
+server:
+  port: 8071
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:/mapper/**/*.xml
