@@ -20,7 +20,7 @@ public class StockController {
     public String reduct() {
         //Thread.sleep(5000);
         // 制造异常触发降级
-        int i = 2 / 0;
+        //int i = 2 / 0;
         System.out.println(port + " 扣减库存");
         return port + " 扣减库存";
     }
