@@ -14,7 +14,7 @@
 - [x] Nacos Config 配置管理
 - [x] Sentinel 流控降级
 - [x] Seata 分布式事务
-- [ ] Gateway 网关
+- [x] Gateway 网关
 - [ ] Skywalking 链路追踪
 
 #### 学习笔记：
@@ -25,3 +25,4 @@
 4. [微服务组件 - 配置中心 Nacos Config](./doc/4.配置中心Nacos-Config.md)
 5. [微服务组件 - 流控降级 Sentinel](./doc/5.流控降级Sentinel.md)
 6. [微服务组件 - 分布式事务 Seata](./doc/6.分布式事务Seata.md)
+7. [微服务组件 - 网关 Gateway](./doc/7.网关Gateway.md)
