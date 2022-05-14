@@ -9,10 +9,10 @@ spring:
       # 路由规则
       routes:
         - id: order_route  # 路由的唯一标识，路由到order
-          uri: lb://order-service  # 需要转发的地址，整合 nacos 使用服务名即可，lb: 使用nacos中的本地负载均衡策略
+          uri: lb://order-seata  # 需要转发的地址，整合 nacos 使用服务名即可，lb: 使用nacos中的本地负载均衡策略
           #断言规则 用于路由规则的匹配
           predicates:
-             - Path=/order/**
+            - Path=/order-seata/**
 #            - Path=/order-serv/**
             # http://api-gateway/order-service/order/add 路由到↓
             # http://order-serv/order-service/order/add

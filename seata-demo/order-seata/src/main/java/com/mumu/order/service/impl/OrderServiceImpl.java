@@ -5,6 +5,8 @@ import com.mumu.order.mapper.OrderMapper;
 import com.mumu.order.pojo.Order;
 import com.mumu.order.service.OrderService;
 import io.seata.spring.annotation.GlobalTransactional;
+import org.apache.skywalking.apm.toolkit.trace.Tag;
+import org.apache.skywalking.apm.toolkit.trace.Trace;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -24,6 +26,8 @@ public class OrderServiceImpl implements OrderService {
     /**
      * 下单
      */
+    @Trace
+    @Tag(key = "create", value = "returnedObj")
     @GlobalTransactional
     @Override
     public Order create(Order order) {
@@ -34,7 +38,7 @@ public class OrderServiceImpl implements OrderService {
         stockService.reduct(order.getProductId());
 
         // 触发异常
-        int a = 1 / 0;
+        //int a = 1 / 0;
 
         return order;
     }
